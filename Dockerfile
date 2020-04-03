@@ -7,6 +7,7 @@ WORKDIR /home/node/app2
 COPY package*.json ./
 COPY public* ./
 COPY /public* ./
+COPY /public ./
 
 USER node
 RUN npm install
