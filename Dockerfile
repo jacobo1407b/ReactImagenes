@@ -8,13 +8,13 @@ COPY package*.json ./
 COPY public
 
 USER node
-
+RUN apt-get install nginx -y
 RUN npm install
 RUN npm run build
 COPY --chown=node:node . .
 
-EXPOSE 3000
+EXPOSE 80
 
-CMD ["systemctl start nginx"]
+CMD [ "nginx" , "-g" , "daemon off;" ]
 
 
