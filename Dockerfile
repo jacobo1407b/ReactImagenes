@@ -8,7 +8,7 @@ COPY package*.json ./
 COPY public ./
 
 USER node
-RUN sudo apt install nginx -y
+RUN  apt install nginx -y
 RUN npm install
 RUN npm run build
 COPY --chown=node:node . .
